@@ -1,5 +1,11 @@
-from apps.f_app_bp_test import test_bp
+"""
+要特别注意的是：
+   蓝图的实例化要和使用在同一个文件夹下面
+"""
 from apps.f_app_bp_test.views.hello import *
+from flask import Blueprint
+
+test_bp = Blueprint('f_app_bp_test', 'apps.f_app_bp_test.url_route', url_prefix='/test_bp')
 
 
 @test_bp.route('/', methods=('GET', 'POST'))
