@@ -5,7 +5,7 @@
 from apps.f_app_bp_test.views.hello import *
 from flask import Blueprint
 
-test_bp = Blueprint('f_app_bp_test', 'apps.f_app_bp_test.url_route', url_prefix='/test_bp')
+test_bp = Blueprint('test_bp', __name__, url_prefix='/test_bp')
 
 
 @test_bp.route('/', methods=('GET', 'POST'))
